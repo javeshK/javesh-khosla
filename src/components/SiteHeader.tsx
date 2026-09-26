@@ -80,7 +80,7 @@ export function SiteHeader() {
     >
       <div className="nav-steel" aria-hidden="true" />
       <a className="wordmark" href="#intro" onClick={closeMenu}>
-        <img className="wordmark-mark" src="/theme/ouroboros.jpg" alt="" width={22} height={22} />
+        <img className="wordmark-mark" src={`${import.meta.env.BASE_URL}theme/ouroboros.jpg`} alt="" width={22} height={22} />
         <span className="wordmark-text">{profile.name}</span>
       </a>
 

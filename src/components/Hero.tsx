@@ -22,7 +22,7 @@ export function Hero() {
     <section id="intro" className="hero">
       <div className="hero-stage" aria-hidden="true">
         <div className="hero-bg" style={{ opacity: bgOpacity }}>
-          <img src={`${import.meta.env.BASE_URL}/hero-bg.jpg`} alt="" />
+          <img src={`${import.meta.env.BASE_URL}hero-bg.jpg`} alt="" />
         </div>
         <div className="hero-crown" />
         <div className="hero-veil" />

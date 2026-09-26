@@ -14,7 +14,7 @@ export function About() {
         </div>
         <figure className="about-figure">
           <img
-            src="/theme/alphonse.jpg"
+            src={`${import.meta.env.BASE_URL}theme/alphonse.jpg`}
             alt=""
             width={640}
             height={800}
