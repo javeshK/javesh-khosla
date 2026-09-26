@@ -12,7 +12,7 @@ export function BackToTop() {
 
   return (
     <a href="#intro" className={`ouroboros-top ${show ? "is-on" : ""}`} aria-label="Back to top">
-      <img src="/theme/ouroboros.jpg" alt="" width={36} height={36} />
+      <img src={`${import.meta.env.BASE_URL}theme/ouroboros.jpg`} alt="" width={36} height={36} />
     </a>
   );
 }
