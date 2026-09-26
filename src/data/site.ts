@@ -88,7 +88,7 @@ export const featuredProjects: Project[] = [
     description:
       "An AI-powered cyber threat intelligence platform for detecting and analyzing digital fraud and related threats.",
     technologies: ["Python", "Flask", "Scikit-learn", "OpenCV", "Tailwind CSS"],
-    github: null,
+    github: "https://github.com/Rakshak-Labs/RakshakAI",
     flagship: true,
   },
   {
