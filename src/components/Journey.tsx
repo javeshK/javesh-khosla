@@ -9,7 +9,6 @@ const kindLabel: Record<string, string> = {
 export function Journey() {
   return (
     <section id="journey" className="section journey">
-      <p className="section-index">05</p>
       <div className="section-body">
         <div className="section-head">
           <h2>Experience</h2>

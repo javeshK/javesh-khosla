@@ -1,30 +1,28 @@
-import { CursorScrubVideo } from "./CursorScrubVideo";
+import { useEffect, useState } from "react";
 import { GitHubIcon } from "./Icons";
 import { links, profile } from "../data/site";
 
-type HeroProps = {
-  mobilePreview: boolean;
-  reducedMotion: boolean;
-};
+const FADE_DISTANCE = 900;
+const IMAGE_OPACITY = 0.95;
 
-export function Hero({ mobilePreview, reducedMotion }: HeroProps) {
+export function Hero() {
+  const [bgOpacity, setBgOpacity] = useState(IMAGE_OPACITY);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const scrollFade = Math.max(0, 1 - window.scrollY / FADE_DISTANCE);
+      setBgOpacity(scrollFade * IMAGE_OPACITY);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <section id="intro" className="hero">
       <div className="hero-stage" aria-hidden="true">
-        <div className="hero-video">
-          <CursorScrubVideo
-            videoFile="/hero.mp4"
-            axis="horizontal"
-            trackingArea="window"
-            follow="look"
-            lookOriginX={0.5}
-            lookOriginY={0.46}
-            smoothing={0.32}
-            objectFit="cover"
-            showPoster
-            mobilePreview={mobilePreview}
-            reducedMotion={reducedMotion}
-          />
+        <div className="hero-bg" style={{ opacity: bgOpacity }}>
+          <img src="/hero-bg.jpg" alt="" />
         </div>
         <div className="hero-crown" />
         <div className="hero-veil" />

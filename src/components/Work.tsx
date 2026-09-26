@@ -35,16 +35,15 @@ export function Work() {
 
   return (
     <section id="work" className="section work">
-      <p className="section-index">03</p>
       <div className="section-body">
         <div className="section-head">
         <h2>Selected work</h2>
           <p>A short list of systems I have built. Not a complete catalogue.</p>
         </div>
 
-        <div className="exchange-set">
+        <div className="project-showcase">
         {flagship ? (
-          <article className="project-card flagship exchange-card">
+          <article className="project-card flagship">
             <div className="project-meta">
               <p className="category">{flagship.category}</p>
               <p className="explore">Explore →</p>
@@ -65,7 +64,7 @@ export function Work() {
 
         <div className="project-grid">
           {rest.map((project) => (
-            <article key={project.id} className="project-card exchange-card">
+            <article key={project.id} className="project-card">
               <div className="project-meta">
                 <p className="category">{project.category}</p>
                 <p className="explore">Explore →</p>

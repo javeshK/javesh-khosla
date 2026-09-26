@@ -157,15 +157,52 @@ export const otherProjects: Project[] = [
   },
 ];
 
-export const interests = [
-  "Artificial Intelligence",
-  "Generative AI",
-  "AI for Cybersecurity",
-  "Cyber Threat Intelligence",
-  "Computer Vision",
-  "Intelligent Applications",
-  "Security Automation",
-  "Software Engineering",
+export type Interest = {
+  title: string;
+  synopsis: string;
+};
+
+export const interests: Interest[] = [
+  {
+    title: "Artificial Intelligence",
+    synopsis:
+      "Systems that learn from data, adapt to new inputs, and automate decisions — the foundation behind most of what I study and build.",
+  },
+  {
+    title: "Generative AI",
+    synopsis:
+      "Models that create text, images, and code. I'm interested in how they work under the hood and how to build useful, reliable applications on top of them.",
+  },
+  {
+    title: "AI for Cybersecurity",
+    synopsis:
+      "Applying machine learning to detect threats, spot anomalies, and strengthen defenses in ways that go beyond static rules and signatures.",
+  },
+  {
+    title: "Cyber Threat Intelligence",
+    synopsis:
+      "Collecting and analysing signals about attackers, campaigns, and vulnerabilities to understand risk before it becomes an incident.",
+  },
+  {
+    title: "Computer Vision",
+    synopsis:
+      "Teaching machines to interpret images and video — from classification and detection to end-to-end vision pipelines in real projects.",
+  },
+  {
+    title: "Intelligent Applications",
+    synopsis:
+      "Software that embeds AI into everyday workflows thoughtfully, so the intelligence feels purposeful rather than bolted on.",
+  },
+  {
+    title: "Security Automation",
+    synopsis:
+      "Orchestrating scanning, monitoring, and response tasks with scripts and tooling to cut manual overhead and move faster.",
+  },
+  {
+    title: "Software Engineering",
+    synopsis:
+      "Designing and shipping dependable systems — clear architecture, solid testing, and code that stays maintainable as it grows.",
+  },
 ];
 
 export const journey: JourneyItem[] = [

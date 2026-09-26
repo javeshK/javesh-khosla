@@ -78,7 +78,6 @@ export function Contact() {
 
   return (
     <section id="contact" className="section contact">
-      <p className="section-index">06</p>
       <div className="section-body">
         <h2>Contact</h2>
         <p className="section-lead">{profile.contactIntro}</p>

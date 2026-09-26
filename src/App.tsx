@@ -12,33 +12,30 @@ import { Work } from "./components/Work";
 import { useReveal } from "./hooks/useReveal";
 
 export default function App() {
-  const [mobilePreview, setMobilePreview] = useState(
-    () => window.matchMedia("(hover: none), (pointer: coarse)").matches,
-  );
   const [reducedMotion, setReducedMotion] = useState(
     () => window.matchMedia("(prefers-reduced-motion: reduce)").matches,
   );
+  const [showFieldSeal, setShowFieldSeal] = useState(false);
 
   useEffect(() => {
-    const coarse = window.matchMedia("(hover: none), (pointer: coarse)");
     const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const sync = () => {
-      setMobilePreview(coarse.matches);
-      setReducedMotion(motion.matches);
-    };
+    const sync = () => setReducedMotion(motion.matches);
     sync();
-    coarse.addEventListener("change", sync);
     motion.addEventListener("change", sync);
-    return () => {
-      coarse.removeEventListener("change", sync);
-      motion.removeEventListener("change", sync);
-    };
+    return () => motion.removeEventListener("change", sync);
   }, []);
 
   useReveal(!reducedMotion);
 
   useEffect(() => {
-    if (mobilePreview || reducedMotion) return;
+    const onScroll = () => setShowFieldSeal(window.scrollY > 160);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    if (reducedMotion) return;
     const root = document.documentElement;
     const onMove = (event: PointerEvent) => {
       root.style.setProperty("--mx", `${event.clientX}px`);
@@ -46,20 +43,20 @@ export default function App() {
     };
     window.addEventListener("pointermove", onMove, { passive: true });
     return () => window.removeEventListener("pointermove", onMove);
-  }, [mobilePreview, reducedMotion]);
+  }, [reducedMotion]);
 
   return (
     <>
       <PageLoader reducedMotion={reducedMotion} />
       <div className="atmosphere" aria-hidden="true">
         <div className="steel-grid" />
-        <TransmutationCircle className="field-seal" size={420} />
+        <TransmutationCircle className={`field-seal${showFieldSeal ? " is-visible" : ""}`} size={420} />
         <div className="grain" />
         <div className="cursor-glow" />
       </div>
       <SiteHeader />
       <main className="all-is-one">
-        <Hero mobilePreview={mobilePreview} reducedMotion={reducedMotion} />
+        <Hero />
         <About />
         <Work />
         <Exploring />
@@ -68,7 +65,7 @@ export default function App() {
       </main>
       <footer className="site-footer">
         <p>Javesh Khosla</p>
-        <p className="exchange-line">To obtain, something of equal value must be lost.</p>
+        <p className="exchange-line">It's a cruel and random world, but the chaos is all so beautiful.</p>
         <p>Computer Science Engineering · GNDU</p>
       </footer>
       <BackToTop />

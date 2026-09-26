@@ -3,7 +3,6 @@ import { profile } from "../data/site";
 export function About() {
   return (
     <section id="about" className="section about">
-      <p className="section-index">02</p>
       <div className="section-body about-layout">
         <div>
           <h2>About</h2>
