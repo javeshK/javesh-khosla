@@ -3,6 +3,5 @@
 
  export default defineConfig({
    plugins: [react()],
--  base: "/javesh-khosla/",
-+  base: "/",
+   base: "/",
  });
