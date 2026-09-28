@@ -165,10 +165,6 @@ h3 {
   display: none;
 }
 
-.header-social--menu {
-  display: none;
-}
-
 .wordmark {
   display: inline-flex;
   align-items: center;
@@ -250,6 +246,10 @@ h3 {
 .header-social a:hover {
   color: var(--crimson);
   transform: translateY(-2px);
+}
+
+.header-social.header-social--menu {
+  display: none;
 }
 
 .hero {
@@ -925,11 +925,22 @@ h3 {
     height: auto;
     min-height: var(--header-h);
     padding: 0.75rem max(1rem, env(safe-area-inset-right)) 0.75rem max(1rem, env(safe-area-inset-left));
+    opacity: 1 !important;
+    overflow: visible;
+    isolation: isolate;
   }
 
   .nav-toggle {
     display: grid;
     place-content: center;
+    flex-shrink: 0;
+    z-index: 25;
+  }
+
+  .nav-toggle[aria-expanded="true"] {
+    position: fixed;
+    top: max(0.75rem, env(safe-area-inset-top));
+    right: max(1rem, env(safe-area-inset-right));
   }
 
   .header-social--desktop {
@@ -984,15 +995,27 @@ h3 {
     font-size: 1rem;
   }
 
+  .site-nav a:hover,
+  .site-nav a.is-active {
+    transform: none;
+  }
+
   .site-nav a::after {
     display: none;
   }
 
-  .header-social--menu {
+  .header-social.header-social--menu {
     display: flex;
     gap: 1rem;
     margin-top: auto;
     padding-top: 1.25rem;
+  }
+
+  .header-social--menu a {
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
   }
 
   .wordmark {
@@ -1079,6 +1102,45 @@ h3 {
     padding: 1.5rem 1.15rem 1.65rem;
   }
 
+  .project-card:hover {
+    transform: none;
+    border-color: var(--line);
+    box-shadow: none;
+  }
+
+  .project-meta {
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+
+  .project-meta .category {
+    min-width: 0;
+  }
+
+  .project-cta {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .project-cta .btn {
+    width: 100%;
+  }
+
+  .project-links,
+  .other-links {
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+  }
+
+  .project-links a,
+  .other-links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    padding: 0.2rem 0;
+  }
+
   .explore {
     display: none;
   }
@@ -1088,14 +1150,27 @@ h3 {
     gap: 0.65rem;
   }
 
+  .other-work li:hover {
+    padding-left: 0;
+  }
+
   .interest-list li {
     cursor: pointer;
-    padding: 1rem 1.75rem 1rem 0;
+    padding: 1rem 0;
+  }
+
+  .interest-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.75rem;
   }
 
   .interest-title::after {
     content: "+";
-    float: right;
+    float: none;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
     color: var(--muted);
     font-size: 1.1rem;
     line-height: 1;
@@ -1110,6 +1185,16 @@ h3 {
     max-width: none;
   }
 
+  .contact-field input,
+  .contact-field textarea {
+    font-size: 1rem;
+  }
+
+  .contact-form .btn {
+    width: 100%;
+    justify-self: stretch;
+  }
+
   .contact-links {
     flex-direction: column;
     align-items: stretch;
@@ -1117,6 +1202,20 @@ h3 {
 
   .contact-links .btn {
     width: 100%;
+  }
+
+  .journey .text-link,
+  .github-all {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    padding: 0.25rem 0;
+  }
+
+  .journey-list h3,
+  .journey-list .dates,
+  .exchange-line {
+    overflow-wrap: anywhere;
   }
 
   .cursor-glow {
@@ -1289,11 +1388,41 @@ h3 {
 
 @media (max-width: 480px) {
   .wordmark-text {
-    max-width: 9.5rem;
+    max-width: 11rem;
   }
 
   .hero-stage {
     height: min(46vh, 18rem);
     min-height: 200px;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.5rem, 7.5vw, 1.85rem);
+  }
+
+  .section {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .section h2 {
+    font-size: 1.25rem;
+  }
+
+  .project-card.flagship h3 {
+    font-size: 1.2rem;
+  }
+
+  .project-card h3 {
+    font-size: 1.05rem;
+  }
+
+  .other-work {
+    margin-top: 2.5rem;
+  }
+
+  .ouroboros-top {
+    width: 3rem;
+    height: 3rem;
   }
 }
