@@ -66,11 +66,11 @@ export const links = {
   github: "https://github.com/javeshK",
   linkedin: "https://www.linkedin.com/in/javeshkhosla/",
   /**
-   * Recipient for the Contact form. Set this to Javesh’s real address.
-   * Leave as "" until then — the form still reads `links.email` and will not invent an inbox.
-   * Delivery uses FormSubmit (https://formsubmit.co/{email}); that inbox must confirm once.
+   * Your email — used for the mailto: button and as the FormSubmit recipient.
+   * Leave as "" to hide the Email button and disable the contact form.
+   * FormSubmit (https://formsubmit.co) sends a one-time activation email per domain.
    */
-  email: "656aa3b472a04038f50533d80bc2b482" as string,
+  email: "javeshkhosla@gmail.com",
 };
 
 export const nav: NavItem[] = [
