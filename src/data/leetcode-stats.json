@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-25T00:00:00.000Z",
+  "lastUpdated": "2026-10-07T18:10:05.098Z",
   "username": "javeshkhosla",
   "totalSolved": 3,
   "totalQuestions": 4073,
@@ -12,9 +12,21 @@
   "acceptanceRate": 100,
   "ranking": 5000001,
   "topicAnalysis": [
-    { "topic": "Math", "count": 3 },
-    { "topic": "String", "count": 2 },
-    { "topic": "Hash Table", "count": 1 },
-    { "topic": "Simulation", "count": 1 }
+    {
+      "topic": "Math",
+      "count": 3
+    },
+    {
+      "topic": "String",
+      "count": 2
+    },
+    {
+      "topic": "Hash Table",
+      "count": 1
+    },
+    {
+      "topic": "Simulation",
+      "count": 1
+    }
   ]
 }
