@@ -65,6 +65,7 @@ export const profile = {
 export const links = {
   github: "https://github.com/javeshK",
   linkedin: "https://www.linkedin.com/in/javeshkhosla/",
+  leetcode: "https://leetcode.com/u/javeshkhosla/",
   /**
    * Your email — used for the mailto: button and as the FormSubmit recipient.
    * Leave as "" to hide the Email button and disable the contact form.
@@ -76,6 +77,7 @@ export const links = {
 export const nav: NavItem[] = [
   { label: "About", href: "#about" },
   { label: "Work", href: "#work" },
+  { label: "LeetCode", href: "/leetcode" },
   { label: "Journey", href: "#journey" },
   { label: "Contact", href: "#contact" },
 ];

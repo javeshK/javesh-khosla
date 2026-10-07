@@ -28,7 +28,7 @@ npm run preview   # optional — preview the production build locally
 |---|---|
 | Hero name, role, intro | `profile` |
 | About paragraphs | `profile.about` |
-| GitHub / LinkedIn / email links | `links` |
+| GitHub / LinkedIn / LeetCode / email links | `links` |
 | Top navigation | `nav` |
 | Selected work cards | `featuredProjects` |
 | Other experiments list | `otherProjects` |
@@ -261,6 +261,36 @@ The footer line *“To obtain, something of equal value must be lost.”* is in 
 | Change scroll-reveal behaviour | `src/hooks/useReveal.ts` |
 
 For routine content updates, **`site.ts` + images in `public/`** is enough.
+
+---
+
+## LeetCode page and auto-sync
+
+The site has a dedicated LeetCode landing page at **`/leetcode`**.
+
+| What | Where |
+|---|---|
+| Page component | `src/pages/LeetCodePage.tsx` |
+| Stats snapshot (build-time) | `src/data/leetcode-stats.json` |
+| Username, API URL, GitHub folder link | `src/data/leetcode.ts` |
+| Synced solution files | `leetcode/` (via LeetHub) |
+| Stats update workflow | `.github/workflows/update-leetcode-stats.yml` |
+
+### LeetHub 2.0 setup (solution commits)
+
+LeetHub pushes your code to GitHub when you pass a problem on LeetCode.
+
+1. Install [LeetHub v2 for Chrome](https://chromewebstore.google.com/detail/leethub-v2/mhanfgfagplhgemhjfeolkkdidbakocm) or [Firefox](https://addons.mozilla.org/en-CA/firefox/addon/leethub-2-0-for-firefox/).
+2. Click **Authorize with GitHub**. For better security, use a **fine-grained PAT** limited to `javesh-khosla` with `Contents: Read/Write` and `Metadata: Read`.
+3. Select repository **`javeshK/javesh-khosla`** and destination folder **`leetcode`**.
+4. Solve a problem on LeetCode — on "Accepted", LeetHub commits the solution here.
+
+LeetHub only syncs **new** submissions. To backfill older problems, re-submit them or copy them manually.
+
+### Stats updates
+
+- The `/leetcode` page fetches live stats from `leetcode-stats.tashif.codes` on load.
+- A GitHub Action also writes `src/data/leetcode-stats.json` hourly (and when `leetcode/` changes) so builds have a fallback snapshot.
 
 ---
 

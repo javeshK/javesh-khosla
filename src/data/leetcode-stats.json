@@ -1,0 +1,20 @@
+{
+  "lastUpdated": "2026-03-25T00:00:00.000Z",
+  "username": "javeshkhosla",
+  "totalSolved": 3,
+  "totalQuestions": 4073,
+  "easySolved": 3,
+  "totalEasy": 969,
+  "mediumSolved": 0,
+  "totalMedium": 2124,
+  "hardSolved": 0,
+  "totalHard": 980,
+  "acceptanceRate": 100,
+  "ranking": 5000001,
+  "topicAnalysis": [
+    { "topic": "Math", "count": 3 },
+    { "topic": "String", "count": 2 },
+    { "topic": "Hash Table", "count": 1 },
+    { "topic": "Simulation", "count": 1 }
+  ]
+}

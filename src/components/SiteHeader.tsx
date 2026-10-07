@@ -1,10 +1,16 @@
 import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { links, nav, profile } from "../data/site";
 import { GitHubIcon, LinkedInIcon } from "./Icons";
 
 const HEADER_FADE_DISTANCE = 320;
 
+function isRouteLink(href: string) {
+  return href.startsWith("/");
+}
+
 export function SiteHeader() {
+  const location = useLocation();
   const [active, setActive] = useState("#intro");
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrollOpacity, setScrollOpacity] = useState(1);
@@ -26,7 +32,7 @@ export function SiteHeader() {
     );
     nodes.forEach((node) => observer.observe(node));
     return () => observer.disconnect();
-  }, []);
+  }, [location.pathname]);
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
@@ -79,10 +85,10 @@ export function SiteHeader() {
       }}
     >
       <div className="nav-steel" aria-hidden="true" />
-      <a className="wordmark" href="#intro" onClick={closeMenu}>
+      <Link className="wordmark" to="/" onClick={closeMenu}>
         <img className="wordmark-mark" src={`${import.meta.env.BASE_URL}theme/ouroboros.jpg`} alt="" width={22} height={22} />
         <span className="wordmark-text">{profile.name}</span>
-      </a>
+      </Link>
 
       <button
         type="button"
@@ -100,16 +106,35 @@ export function SiteHeader() {
       <div className={`nav-backdrop${menuOpen ? " is-open" : ""}`} onClick={closeMenu} aria-hidden="true" />
 
       <nav id="site-nav" className={`site-nav${menuOpen ? " is-open" : ""}`} aria-label="Primary">
-        {nav.map((item) => (
-          <a
-            key={item.href}
-            href={item.href}
-            className={active === item.href ? "is-active" : ""}
-            onClick={closeMenu}
-          >
-            <span>{item.label}</span>
-          </a>
-        ))}
+        {nav.map((item) => {
+          const isActive = isRouteLink(item.href)
+            ? location.pathname === item.href
+            : active === item.href;
+
+          if (isRouteLink(item.href)) {
+            return (
+              <Link
+                key={item.href}
+                to={item.href}
+                className={isActive ? "is-active" : ""}
+                onClick={closeMenu}
+              >
+                <span>{item.label}</span>
+              </Link>
+            );
+          }
+
+          return (
+            <a
+              key={item.href}
+              href={item.href}
+              className={isActive ? "is-active" : ""}
+              onClick={closeMenu}
+            >
+              <span>{item.label}</span>
+            </a>
+          );
+        })}
         <div className="header-social header-social--menu">
           <a href={links.github} target="_blank" rel="noreferrer" aria-label="GitHub">
             <GitHubIcon />
