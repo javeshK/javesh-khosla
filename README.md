@@ -76,3 +76,19 @@ Cursor scrubbing is desktop-only. On phones the same video plays as a slow muted
 ## CursorScrubVideo
 
 React component: `src/components/CursorScrubVideo.tsx`. Same props as the Framer panel spec (`videoFile`, `axis`, `reverse`, `trackingArea`, `smoothing`, `objectFit`, `showPoster`, `borderRadius`).
+
+<!---LeetCode Topics Start-->
+# LeetCode Topics
+## String
+|  |
+| ------- |
+| [1021-remove-outermost-parentheses](https://github.com/javeshK/javesh-khosla/tree/master/1021-remove-outermost-parentheses) |
+## Stack
+|  |
+| ------- |
+| [1021-remove-outermost-parentheses](https://github.com/javeshK/javesh-khosla/tree/master/1021-remove-outermost-parentheses) |
+## Bracket Sequences
+|  |
+| ------- |
+| [1021-remove-outermost-parentheses](https://github.com/javeshK/javesh-khosla/tree/master/1021-remove-outermost-parentheses) |
+<!---LeetCode Topics End-->
