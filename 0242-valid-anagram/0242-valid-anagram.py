@@ -3,6 +3,6 @@ class Solution:
         if len(s) != len(t):
             return False
         
-        return sorted(s) == sorted(t)
+        return sorted(list(s)) == sorted(list(t))
             
         
