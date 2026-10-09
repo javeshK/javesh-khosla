@@ -82,6 +82,7 @@ React component: `src/components/CursorScrubVideo.tsx`. Same props as the Framer
 ## String
 |  |
 | ------- |
+| [0242-valid-anagram](https://github.com/javeshK/javesh-khosla/tree/master/0242-valid-anagram) |
 | [1021-remove-outermost-parentheses](https://github.com/javeshK/javesh-khosla/tree/master/1021-remove-outermost-parentheses) |
 ## Stack
 |  |
@@ -91,4 +92,12 @@ React component: `src/components/CursorScrubVideo.tsx`. Same props as the Framer
 |  |
 | ------- |
 | [1021-remove-outermost-parentheses](https://github.com/javeshK/javesh-khosla/tree/master/1021-remove-outermost-parentheses) |
+## Hash Table
+|  |
+| ------- |
+| [0242-valid-anagram](https://github.com/javeshK/javesh-khosla/tree/master/0242-valid-anagram) |
+## Sorting
+|  |
+| ------- |
+| [0242-valid-anagram](https://github.com/javeshK/javesh-khosla/tree/master/0242-valid-anagram) |
 <!---LeetCode Topics End-->
