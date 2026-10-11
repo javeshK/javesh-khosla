@@ -100,4 +100,12 @@ React component: `src/components/CursorScrubVideo.tsx`. Same props as the Framer
 |  |
 | ------- |
 | [0242-valid-anagram](https://github.com/javeshK/javesh-khosla/tree/master/0242-valid-anagram) |
+## Array
+|  |
+| ------- |
+| [2778-sum-of-squares-of-special-elements](https://github.com/javeshK/javesh-khosla/tree/master/2778-sum-of-squares-of-special-elements) |
+## Enumeration
+|  |
+| ------- |
+| [2778-sum-of-squares-of-special-elements](https://github.com/javeshK/javesh-khosla/tree/master/2778-sum-of-squares-of-special-elements) |
 <!---LeetCode Topics End-->
