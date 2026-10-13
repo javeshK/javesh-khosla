@@ -100,12 +100,18 @@ React component: `src/components/CursorScrubVideo.tsx`. Same props as the Framer
 |  |
 | ------- |
 | [0242-valid-anagram](https://github.com/javeshK/javesh-khosla/tree/master/0242-valid-anagram) |
+| [3727-maximum-alternating-sum-of-squares](https://github.com/javeshK/javesh-khosla/tree/master/3727-maximum-alternating-sum-of-squares) |
 ## Array
 |  |
 | ------- |
 | [2778-sum-of-squares-of-special-elements](https://github.com/javeshK/javesh-khosla/tree/master/2778-sum-of-squares-of-special-elements) |
+| [3727-maximum-alternating-sum-of-squares](https://github.com/javeshK/javesh-khosla/tree/master/3727-maximum-alternating-sum-of-squares) |
 ## Enumeration
 |  |
 | ------- |
 | [2778-sum-of-squares-of-special-elements](https://github.com/javeshK/javesh-khosla/tree/master/2778-sum-of-squares-of-special-elements) |
+## Greedy
+|  |
+| ------- |
+| [3727-maximum-alternating-sum-of-squares](https://github.com/javeshK/javesh-khosla/tree/master/3727-maximum-alternating-sum-of-squares) |
 <!---LeetCode Topics End-->
