@@ -1,15 +1,15 @@
 {
-  "lastUpdated": "2026-10-13T15:35:37.636Z",
+  "lastUpdated": "2026-10-13T20:59:23.868Z",
   "username": "javeshkhosla",
-  "totalSolved": 6,
+  "totalSolved": 7,
   "totalQuestions": 4082,
   "easySolved": 6,
   "totalEasy": 971,
-  "mediumSolved": 0,
+  "mediumSolved": 1,
   "totalMedium": 2128,
   "hardSolved": 0,
   "totalHard": 983,
-  "acceptanceRate": 90.91,
+  "acceptanceRate": 91.67,
   "ranking": 5000001,
   "topicAnalysis": [
     {
@@ -26,6 +26,14 @@
     },
     {
       "topic": "Array",
+      "count": 2
+    },
+    {
+      "topic": "Sorting",
+      "count": 2
+    },
+    {
+      "topic": "Greedy",
       "count": 1
     },
     {
@@ -34,10 +42,6 @@
     },
     {
       "topic": "Enumeration",
-      "count": 1
-    },
-    {
-      "topic": "Sorting",
       "count": 1
     },
     {
